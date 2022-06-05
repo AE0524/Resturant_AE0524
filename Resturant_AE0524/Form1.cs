@@ -1,22 +1,33 @@
+
+using System.Data.OleDb;
+
 namespace Resturant_AE0524
 {
     public partial class fr : Form
     {
+     
         private List<User>  Userslist = new List<User>();
         public fr()
         {
             InitializeComponent();
 
-            User user = new User(1,"SABA AQEL","SA","1234");
+            User user = new User( "Saba","1234");
             Userslist.Add(user);
 
         }
+        //
+        /*OleDbPermission ocn =new OleDbPermission();
+        String acon = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Welcome.accdb;Persist Security Info=False;";
+        OleDbPermission ocn1 = new OleDbPermission(); */
+
+        
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+           // String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Welcome.accdb;Persist Security Info=False;";
+            
         }
-
+       
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String username = txtUsername.Text;
@@ -26,13 +37,26 @@ namespace Resturant_AE0524
             {
                 if (username == user.Username && password == user.Password)
                 {
-                   frmWelcome frm = new frmWelcome();
-                   frm.ShowDialog();
+                    frmWelcome frm = new frmWelcome();
+                    frm.user2 = " Welcome "+txtUsername.Text;
+                    frm.ShowDialog();
                     return;
                 }
-            }
 
-            MessageBox.Show("Wrong username or password");
+                else
+                {
+
+                    MessageBox.Show("Wrong username or password");
+                }
+            }
+            //
+            
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
         }
     }
+   
 }

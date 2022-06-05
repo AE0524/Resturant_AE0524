@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Resturant_AE0524
 {
-    internal class User
+    public class User
     {
-        public int UserId { get; set; }
-        public String UserFullname { get; set; }
-        public String Username { get; set; }
+     
+        
+       public String Username { get; set; }
         public String Password { get; set; }
 
         public User()
@@ -18,13 +18,14 @@ namespace Resturant_AE0524
 
         }
 
-        public User(int userId ,String userFullname , String username ,String password)
+        public User( String username, String password)
         {
-            UserId = userId;    
-            UserFullname = userFullname;
+            
             Username = username;
             Password = password;
 
-        }
+        } 
     }
+
+
 }
