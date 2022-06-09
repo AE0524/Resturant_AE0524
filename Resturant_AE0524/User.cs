@@ -8,8 +8,7 @@ namespace Resturant_AE0524
 {
     public class User
     {
-     
-        
+
        public String Username { get; set; }
         public String Password { get; set; }
 

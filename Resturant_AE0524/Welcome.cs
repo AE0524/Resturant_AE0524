@@ -50,18 +50,20 @@ namespace Resturant_AE0524
         private void btmDrinks_Click(object sender, EventArgs e)
         {
             Drinks frm2 = new Drinks();
-            frm2.ShowDialog();
-            frm2.TopLevel = true;
-            this.panel1.Controls.Add(frm2);
+            
+            frm2.TopLevel = false;
+            this.panel3.Controls.Add(frm2);
+            frm2.Show();
 
         }
 
         private void btmFoods_Click(object sender, EventArgs e)
         {
             Foods frm1 = new Foods();
-            frm1.ShowDialog();
-            frm1.TopLevel = true;   
-            this.panel1.Controls.Add(frm1);
+          
+            frm1.TopLevel = false;   
+            this.panel3.Controls.Add(frm1);
+            frm1.Show();
             
         }
 
